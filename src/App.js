@@ -28,6 +28,8 @@ class App extends Component {
       ...this.state.persons[personIndex]
     };
 
+    // const person = Onject.assign({}, this.state.persons[personIndex]);
+
     person.name = event.target.value;
 
     const persons = [...this.state.persons];
@@ -80,29 +82,7 @@ class App extends Component {
         {persons}
       </div>
     );
-    // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Hello World!'));
   }
 }
 
 export default App;
-
-/*
-state = {
-  persons: [
-    {name: "Max", age: 35}, 
-    {name: "Ellie", age: 26},
-    {name: "Inna", age: 25}
-  ]
-};
-
-switchNameHandler = () => {
-  // console.log('was clicked');
-  // this.state.persons[0].name = "Maximus";
-  this.setState({
-    persons: [
-      {name: "Maximus", age: 35}, 
-      {name: "Ellie", age: 26},
-      {name: "Inna", age: 27}
-    ]
-  });
-} */
