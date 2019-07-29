@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.css'
 import Person from './Person/Person.js';
 
 class App extends Component {
@@ -51,8 +51,7 @@ class App extends Component {
       color: 'white',
       font: 'inherit',
       border: '3px solid lightgreen',
-      padding: '8px',
-      cursor: 'pointer'
+      padding: '8px'
     };
     
     let persons = null;
