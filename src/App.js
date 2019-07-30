@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import classes from './App.module.css';
 import Person from './Person/Person.js';
-import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 class App extends Component {
   state = {
@@ -47,14 +46,6 @@ class App extends Component {
   }
 
   render () {
-    // const style = {
-    //   backgroundColor: 'green',
-    //   color: 'white',
-    //   font: 'inherit',
-    //   border: '3px solid lightgreen',
-    //   padding: '8px'
-    // };
-    
     let persons = null;
     let btnClass = '';
 
@@ -62,21 +53,18 @@ class App extends Component {
       persons = (
         <div>
           {this.state.persons.map((person, index) => {
-            return <ErrorBoundary key={person.id}>
-              <Person 
+            return <Person 
             click={() => this.deletePersonHandler(index)}
             name={person.name} 
             age={person.age}
+            key={person.id}
             changed={(event) => this.nameChangedHandler(event, person.id)}
-            /></ ErrorBoundary>
+            />
           })}
         </div>
       );
 
       btnClass = classes.Red;
-
-      // style.backgroundColor = 'red';
-      // style.border = '3px solid pink';
 
     }
 
